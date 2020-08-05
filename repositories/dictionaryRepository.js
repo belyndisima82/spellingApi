@@ -20,7 +20,10 @@ var getRandom = function() {
                 reject(error);
                 return;
             }
-            var random = new models.Spelling(result[0]);
+            var random = {
+                word: result[0].word,
+                id: result[0].id
+            }
             resolve(random);
         });
     });
